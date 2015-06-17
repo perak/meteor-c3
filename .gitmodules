@@ -1,0 +1,3 @@
+[submodule "c3"]
+	path = c3
+	url = https://github.com/masayuki0812/c3.git
