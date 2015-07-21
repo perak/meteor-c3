@@ -9,7 +9,7 @@ Usage
 
 Somewhere in your template, add this:
 
-```
+```Handlebars
 <template name="someTemplate">
 
 	{{> c3 myChartData}}
@@ -19,7 +19,7 @@ Somewhere in your template, add this:
 
 And in .js define helper that returns chart data object as described in c3 docs:
 
-```
+```JavaScript
 Template.someTemplate.helpers({
 	"myChartData": function() {
 		return {
@@ -31,13 +31,13 @@ Template.someTemplate.helpers({
 				type: 'spline'
 			}
 		};
-	}	
+	}
 });
 ```
 
 Of course, instead providing static data, you can reactively show data from collection:
 
-```
+```JavaScript
 Template.someTemplate.helpers({
 	"myChartData": function() {
 
@@ -54,11 +54,34 @@ Template.someTemplate.helpers({
 				type: 'line'
 			}
 		};
-	}	
+	}
 });
 ```
 In this example, `SomeCollection` contains key `expenses` that will be shown in the graph.
 
+JSON objects can also be given as data:
+
+```JavaScript
+// ...
+return {
+	data: {
+		json: {
+			data1: [4, 3, 5, 2],
+			data2: [6, 4, 3, 6]
+		}
+	}
+}
+```
+
+If you want to use **multiple charts on one page** you must specify a unique id, thus the syntax is a bit different:
+
+```Handlebars
+<template name="someTemplate">
+
+	{{> c3 data=myChartData id="chart4"}}
+
+</template>
+```
 
 Live example
 ============
