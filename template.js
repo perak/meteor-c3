@@ -1,20 +1,24 @@
 
 Template.c3.rendered = function() {
+	var getData = function() {
+		// this.data.data.data can only exist if template has been passed a data attribute
+		// https://github.com/perak/meteor-c3/issues/1
+		var thisData = UI.getData();
+		var data;
+		if (thisData && thisData.data && thisData.data.data) {
+			data = thisData.data
+			data.bindto = thisData.id ? "#"+thisData.id : "#chart"
+		} else {
+			data = thisData || { data: { columns: [] }}
+		}
+		return data;
+	};
 
-	// this.data.data.data can only exist if template has been passed a data attribute
-	// https://github.com/perak/meteor-c3/issues/1
-	var data;
-	if (this.data && this.data.data && this.data.data.data) {
-		data = this.data.data
-		data.bindto = this.data.id ? "#"+this.data.id : "#chart"
-	} else {
-		data = this.data || { data: { columns: [] }}
-	}
-	var chart = c3.generate(data);
+	var chart = c3.generate(getData());
 
 	this.autorun(function (tracker) {
 		if(UI.getData()) {
-			chart.load(UI.getData().data || { columns: [] });
+			chart.load(getData().data || { columns: [] });
 		}
 	});
 };

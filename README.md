@@ -89,6 +89,14 @@ Live example
 You can see live example built with <a href="http://www.meteorkitchen.com" target="_blank">Meteor Kitchen</a> showing radiation level from geiger counter <a href="http://generator-geiger.meteor.com" target="_blank">here</a>.
 
 
+Credits
+=======
+
+- Thanks to @KristerV
+
+
+---
+
 That's all folks.
 
 Enjoy! :)
