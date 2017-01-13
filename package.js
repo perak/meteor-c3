@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'perak:c3',
 	summary: "Reactive C3 charting library based on D3",
-	version: "1.0.6",
+	version: "1.0.7",
 	git: "https://github.com/perak/meteor-c3.git"
 });
 
