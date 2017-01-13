@@ -16,9 +16,9 @@ Template.c3.rendered = function() {
 	};
 
 	var data = getData() || { columns: [] };
-
 	var chart = c3.generate(data);
-	var id = data.id || "chart";
+
+	var id = this.data.id || "chart";
 	c3charts[id] = chart;
 
 	this.autorun(function (tracker) {
@@ -29,8 +29,8 @@ Template.c3.rendered = function() {
 };
 
 Template.c3.destroyed = function() {
-	var id = this.data ? (this.data.id || "chart") : "chart";
-	delete c3charts[this.data.id];
+	var id = this.data.id || "chart";
+	delete c3charts[id];
 };
 
 Template.c3.helpers({
