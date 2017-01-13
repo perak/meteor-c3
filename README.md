@@ -83,6 +83,16 @@ If you want to use **multiple charts on one page** you must specify a unique id,
 </template>
 ```
 
+Access C3 API
+=============
+
+You can access your chart's c3 variable via global `c3charts` object. Your chart should have unique id.
+
+```
+var myChart = c3charts["myChartId"];
+```
+
+
 Live example
 ============
 

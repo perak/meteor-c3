@@ -1,3 +1,4 @@
+c3charts = {};
 
 Template.c3.rendered = function() {
 	var getData = function() {
@@ -14,13 +15,21 @@ Template.c3.rendered = function() {
 		return data;
 	};
 
-	var chart = c3.generate(getData());
+	var data = getData();
+
+	var chart = c3.generate(data);
+	var id = data.id || "chart";
+	c3charts[id] = chart;
 
 	this.autorun(function (tracker) {
 		if(UI.getData()) {
 			chart.load(getData().data || { columns: [] });
 		}
 	});
+};
+
+Template.c3.destroyed = function() {
+	delete c3charts[this.data.id];
 };
 
 Template.c3.helpers({
