@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'perak:c3',
 	summary: "Reactive C3 charting library based on D3",
-	version: "1.0.4",
+	version: "1.0.5",
 	git: "https://github.com/perak/meteor-c3.git"
 });
 
@@ -20,4 +20,6 @@ Package.onUse(function (api) {
 	api.add_files('c3/c3.css', "client");
 	api.add_files('template.html', "client");
 	api.add_files('template.js', "client");
+
+	api.export('c3charts', "client");
 });
