@@ -13,7 +13,7 @@ Package.onUse(function (api) {
 		api.versionsFrom('METEOR@0.9.0');
 	}
 
-	api.use("sergeyt:d3@3.4.1", 'client');
+	api.use("d3js:d3@3.5.8", 'client');
 	api.use('templating');
 
 	api.add_files('c3/c3.js', "client");
