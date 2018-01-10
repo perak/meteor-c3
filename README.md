@@ -86,23 +86,23 @@ If you want to use **multiple charts on one page** you must specify a unique id,
 Access C3 API
 =============
 
-You can access your chart's c3 variable via global `c3charts` object. Your chart should have unique id.
+You can access your chart's c3 variable via global `c3charts` object by referencing your chart's id attribute (please keep id unique).
 
 ```
-var myChart = c3charts["myChartId"];
+var myChart = c3charts["chart4"];
 ```
 
 
 Live example
 ============
 
-You can see live example built with <a href="http://www.meteorkitchen.com" target="_blank">Meteor Kitchen</a> showing radiation level from geiger counter <a href="http://generator-geiger.meteor.com" target="_blank">here</a>.
+You can see live example built with <a href="http://www.meteorkitchen.com" target="_blank">Meteor Kitchen</a> showing radiation level from geiger counter <a href="https://example-geiger.meteorfarm.com" target="_blank">here</a>.
 
 
 Credits
 =======
 
-- Thanks to @KristerV
+- Thanks to @KristerV and @tripflex for fixes and improvements
 
 
 ---
